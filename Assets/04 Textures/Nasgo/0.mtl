@@ -1,0 +1,16 @@
+# Blender MTL File: 'MRL-C.blend'
+# Material Count: 1
+
+newmtl 24_BIOGMPADPVOLMat1a_0.2_0.0_0.0
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.633832 0.744755 0.685348
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd D:\Dropbox\Shared Files\XPS\Volus,Mass Effect 3\MP_ADP_VOL_Diff.tga
+map_Bump D:\\Dropbox\\Shared Files\\XPS\\Volus,Mass Effect 3\\MP_ADP_VOL_Norm.tga
+map_Ks D:\\Dropbox\\Shared Files\\XPS\\Volus,Mass Effect 3\\MP_ADP_VOL_S.tga
+map_d D:\\Dropbox\\Shared Files\\XPS\\Volus,Mass Effect 3\\MP_ADP_VOL_Diff.tga
