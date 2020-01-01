@@ -25,8 +25,12 @@ public class CannonBehaviour : MonoBehaviour {
     public float curTempoBarreira;
 
     public AudioSource auxAudio;
-    public AudioClip[] sons; 
-    
+    public AudioClip[] sons;
+
+    public GameObject gameover;
+    public GameObject explosaoOver;
+    public float overtimeCur;
+    public bool explodiu;
     // Use this for initialization
     void Start () {
         vidaCur = vidaTotal;
@@ -37,11 +41,34 @@ public class CannonBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
+        gameover.SetActive(false);
         auxLoja = GameObject.Find("Loja").GetComponent<Loja>();
-        FaceMouse();
-        Atirar();
+        if (vidaCur>0)
+        {
+            FaceMouse();
+            Atirar();
+        }
         Pontos.text = "" + PontosTotais;
         vidaBase.text = " " + vidaCur +"%";
+
+        if(vidaCur <=0)
+        {
+            if(!explodiu)
+            {
+            Instantiate(explosaoOver, transform.position, transform.rotation);
+                explodiu = true;
+            }
+           
+            overtimeCur += Time.deltaTime;
+            if(overtimeCur >=3)
+            {
+                gameover.SetActive(true);
+            }
+                if(overtimeCur >= 9)
+                {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+                }
+        }
     }
 
     public void FaceMouse()
